@@ -9,10 +9,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 	public class EncontrarElementos {
 		
 		public static void main(String[] args) {
-			//pega os campos pelo Xpath e id
+			
 			WebDriver driver = new FirefoxDriver();
+			//instancia di driver
 			driver.get("https://twitter.com/login/");
+			//pega url
 			driver.manage().window().maximize();
+			//pega os campos pelo Xpath e id
 			driver.findElement(By.xpath("//div[@class='signin-wrapper']//input[@name='session[username_or_email]']")).sendKeys("seuemail");
 			driver.findElement(By.xpath("//div[@class='signin-wrapper']//input[@name='session[password]']")).sendKeys("suasenha");
 			driver.findElement(By.xpath("//div[@class='signin-wrapper']//button[@class='submit btn primary-btn']")).click();
